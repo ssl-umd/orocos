@@ -22,7 +22,7 @@ mv utilrb/temp.txt Rakefile
 echo "Building edited bootstrap script"
 bash bootstrap-2.6.sh
 
-source env.sh
+source ./env.sh
 echo "Editing .bashrc"
 echo "./orocos/orocos-toolchain/env.sh" >> ~/.bashrc
 
