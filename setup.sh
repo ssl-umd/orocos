@@ -3,8 +3,6 @@
 echo "Installing rubygems"
 sudo apt-get install rubygems
 
-mkdir orocos
-cd orocos
 mkdir orocos-toolchain
 cd orocos-toolchain
 
