@@ -17,7 +17,10 @@ echo "installing hoe gem"
 gem install hoe
 
 echo "editing Rakefile"
-sed '27s/Utilrb.doc/#Utilrb.doc/' utilrb/Rakefile
+touch utilrb/temp.txt
+(sed '27s/Utilrb.doc/#Utilrb.doc/' utilrb/Rakefile) > utilrb/temp.txt
+rm utilrb/Rakefile
+mv utilrb/temp.txt Rakefile
 echo "Building edited bootstrap script"
 bash bootstrap-2.6.sh
 
