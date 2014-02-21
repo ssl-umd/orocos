@@ -19,6 +19,9 @@ touch utilrb/temp.txt
 (sed '27s/Utilrb.doc/#Utilrb.doc/' utilrb/Rakefile) > utilrb/temp.txt
 rm utilrb/Rakefile
 mv utilrb/temp.txt Rakefile
+echo "Removing autoproj directory and script"
+sudo rm -r autoproj
+sudo rm autoproj_bootstrap
 echo "Building edited bootstrap script"
 sudo bash bootstrap-2.6.sh
 
