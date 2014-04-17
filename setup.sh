@@ -3,6 +3,9 @@
 echo "Installing rubygems"
 sudo apt-get install rubygems
 
+echo "Installing ruby 1.9.1"
+sudo apt-get install ruby1.9.1
+
 mkdir orocos-toolchain
 cd orocos-toolchain
 
@@ -21,12 +24,14 @@ rm utilrb/Rakefile
 mv utilrb/temp.txt Rakefile
 echo "Removing autoproj directory and script"
 sudo rm -r autoproj
-sudo rm autoproj_bootstrap
+
+update-alternatives --set ruby /usr/bin/ruby1.9.1
+
 echo "Building edited bootstrap script"
 sudo bash bootstrap-2.6.sh
 
 echo "Editing .bashrc"
-echo "./orocos/orocos-toolchain/env.sh" >> ~/.bashrc
+echo "source ~/Exoskeleton/orocos/orocos-toolchain/env.sh" >> ~/.bashrc
 
 chmod 777 env.sh
 source ./env.sh
